@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,17 +62,15 @@
       
       <div class="video-gallery-container">
         <button class="button nav-button nav-prev" onclick="navigateVideos(-1)">
-          <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-          </span>
+          &laquo;
         </button>
         
         <div class="columns">
           <div class="column">
             <div class="video-panel">
               <h3 class="video-title" id="sourceATitle">Source A - Video 1</h3>
-              <video id="videoA" controls class="has-ratio">
-                <source src="" type="video/mp4">
+              <video id="videoA" controls class="has-ratio" width="100%">
+                <source src="videos/sample1A.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -82,8 +79,8 @@
           <div class="column">
             <div class="video-panel">
               <h3 class="video-title" id="sourceBTitle">Source B - Video 1</h3>
-              <video id="videoB" controls class="has-ratio">
-                <source src="" type="video/mp4">
+              <video id="videoB" controls class="has-ratio" width="100%">
+                <source src="videos/sample1B.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -93,9 +90,7 @@
         <div class="counter has-text-centered" id="counter">1/5</div>
         
         <button class="button nav-button nav-next" onclick="navigateVideos(1)">
-          <span class="icon">
-            <i class="fas fa-chevron-right"></i>
-          </span>
+          &raquo;
         </button>
       </div>
     </div>
