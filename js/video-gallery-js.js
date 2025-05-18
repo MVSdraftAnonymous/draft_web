@@ -1,14 +1,14 @@
 // Video gallery configuration
 const videoPairs = [
     { 
-        sourceA: "./videos/video1A.mp4", 
-        sourceB: "./videos/video1B.mp4",
+        sourceA: "videos/video1A.mp4", 
+        sourceB: "videos/video1B.mp4",
         titleA: "Source A - Video 1",
         titleB: "Source B - Video 1"
     },
     { 
-        sourceA: "./videos/video2A.mp4", 
-        sourceB: "./videos/video2B.mp4",
+        sourceA: "videos/video2A.mp4", 
+        sourceB: "videos/video2B.mp4",
         titleA: "Source A - Video 2",
         titleB: "Source B - Video 2"
     },
