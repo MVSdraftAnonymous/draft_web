@@ -27,25 +27,44 @@ const counter = document.getElementById("counter");
 
 // Initialize videos
 function loadCurrentVideoPair() {
-    const currentPair = videoPairs[currentPairIndex];
-    
-    // Set video sources
-    videoA.innerHTML = `<source src="${currentPair.sourceA}" type="video/mp4">
-                       Your browser does not support the video tag.`;
-    videoB.innerHTML = `<source src="${currentPair.sourceB}" type="video/mp4">
-                       Your browser does not support the video tag.`;
-    
-    // Set titles
-    sourceATitle.textContent = currentPair.titleA;
-    sourceBTitle.textContent = currentPair.titleB;
-    
-    // Update counter
-    counter.textContent = `${currentPairIndex + 1}/${totalPairs}`;
-    
-    // Load the videos
-    videoA.load();
-    videoB.load();
+  const currentPair = videoPairs[currentPairIndex];
+
+  // 1) swap out the <source> tags
+  videoA.innerHTML = `
+    <source src="${currentPair.sourceA}" type="video/mp4">
+    Your browser does not support the video tag.
+  `;
+  videoB.innerHTML = `
+    <source src="${currentPair.sourceB}" type="video/mp4">
+    Your browser does not support the video tag.
+  `;
+
+  // 2) update titles & counter
+  sourceATitle.textContent = currentPair.titleA;
+  sourceBTitle.textContent = currentPair.titleB;
+  counter.textContent     = `${currentPairIndex + 1}/${totalPairs}`;
+
+  // 3) tell the browser to fetch the new videos
+  videoA.load();
+  videoB.load();
+
+  // 4) once both can play, reset time and play simultaneously
+  Promise.all([
+    videoA.readyState >= 2
+      ? Promise.resolve()
+      : new Promise(res => videoA.oncanplay = res),
+    videoB.readyState >= 2
+      ? Promise.resolve()
+      : new Promise(res => videoB.oncanplay = res)
+  ]).then(() => {
+    videoA.currentTime = 0;
+    videoB.currentTime = 0;
+    return Promise.all([ videoA.play(), videoB.play() ]);
+  }).catch(err => {
+    console.warn("Autoplay failed (browser policy):", err);
+  });
 }
+
 
 // Navigation function
 function navigateVideos(direction) {
