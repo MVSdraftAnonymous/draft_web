@@ -4,40 +4,100 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Paper Abstract</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Merriweather&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
+    :root {
+      --color-bg: #fafafa;
+      --color-card: #ffffff;
+      --color-text: #333333;
+      --color-accent: #4a90e2;
+      --radius: 0.5rem;
+      --gap: 1.5rem;
+      --max-width: 720px;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      padding: var(--gap);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    section.card {
+      background: var(--color-card);
+      padding: var(--gap);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: var(--gap);
+    }
+
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--color-accent);
+      text-align: center;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section.card p {
+      text-align: justify;
+    }
+
     img {
+      display: block;
       max-width: 100%;
       height: auto;
-      display: block;
-      margin: 1rem auto;
-    }
-    h1, h2 {
-      text-align: center;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: var(--gap) auto 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Abstract section -->
-  <section>
-    <h1>Abstract</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus.
-      Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate
-      nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh.
-    </p>
-  </section>
+  <div class="container">
 
-  <!-- Image display section -->
-  <section>
-    <h2>Key Figure</h2>
-    <img src="Rocket_Raccoon_singing_in_a_spaceship,_from_Guardians_of_the_Galaxy_Vol_3,_2023.png" alt="Description of the figure">
-  </section>
+    <!-- Abstract section -->
+    <section class="card">
+      <h1>Abstract</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus.
+        Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate
+        nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh.
+      </p>
+    </section>
+
+    <!-- Image display section -->
+    <section class="card">
+      <h2>Key Figure</h2>
+      <img src="Rocket_Raccoon_singing_in_a_spaceship,_from_Guardians_of_the_Galaxy_Vol_3,_2023.png"
+           alt="Description of the figure">
+    </section>
+
+  </div>
 
 </body>
 </html>
