@@ -1,137 +1,105 @@
+/* Base font */
 body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
+/* Footer icons */
 .footer .icon-link {
-    font-size: 25px;
-    color: #000;
+  font-size: 25px;
+  color: #000;
 }
 
+/* Link blocks spacing */
 .link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
+/* Small-caps variant for .dnerf */
 .dnerf {
   font-variant: small-caps;
 }
 
-
+/* Teaser section */
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
 }
-
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
 
-
+/* Publication header fonts */
 .publication-title {
+  font-family: 'Google Sans', sans-serif;
 }
-
-.publication-banner {
-  max-height: parent;
-
-}
-
-.publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
-}
-
-.publication-header .hero-body {
-}
-
-.publication-title {
-    font-family: 'Google Sans', sans-serif;
-}
-
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+  font-family: 'Google Sans', sans-serif;
 }
-
 .publication-venue {
-    color: #555;
-    width: fit-content;
-    font-weight: bold;
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
 }
-
 .publication-awards {
-    color: #ff3860;
-    width: fit-content;
-    font-weight: bolder;
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
 }
-
-.publication-authors {
-}
-
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+  color: hsl(204, 86%, 53%) !important;
 }
-
 .publication-authors a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 .author-block {
   display: inline-block;
 }
 
-.publication-banner img {
-}
-
-.publication-authors {
-  /*color: #4286f4;*/
-}
-
+/* Publication video embed */
 .publication-video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-
-    overflow: hidden;
-    border-radius: 10px !important;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px !important;
 }
-
 .publication-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.publication-body img {
-}
-
+/* Carousel styling */
 .results-carousel {
   overflow: hidden;
 }
-
 .results-carousel .item {
   margin: 5px;
   overflow: hidden;
   padding: 20px;
   font-size: 0;
 }
-
 .results-carousel video {
   margin: 0;
 }
-
 .slider-pagination .slider-page {
-  background: #000000;
+  background: #000;
 }
-
 .eql-cntrb { 
   font-size: smaller;
 }
 
-
-
+/* Override Bulma hero fonts for your header */
+.hero .title.is-1 {
+  font-family: 'Montserrat', sans-serif !important;
+  color: #4a90e2 !important;
+}
+.hero .subtitle.is-5,
+.hero .subtitle.is-6 {
+  font-family: 'Merriweather', serif !important;
+  color: #4a90e2 !important;
+}
