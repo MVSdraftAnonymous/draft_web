@@ -15,7 +15,6 @@ const videoPairs = [
     
 ];
 
-// State variables
 let currentPairIndex = 0;
 const totalPairs = videoPairs.length;
 
