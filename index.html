@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,36 +9,32 @@
   <link 
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Merriweather&display=swap" 
     rel="stylesheet">
-
   <!-- Bulma & custom CSS -->
   <link rel="stylesheet" href="css/bulma.min.css">
   <link rel="stylesheet" href="css/bulma-carousel.min.css">
   <link rel="stylesheet" href="css/bulma-slider.min.css">
   <link rel="stylesheet" href="css/fontawesome.all.min.css">
   <link rel="stylesheet" href="css/index.css">
+  <!-- Video Gallery CSS -->
+  <link rel="stylesheet" href="css/video-gallery.css">
 </head>
 <body>
-
   <!-- Header Hero -->
   <section class="hero is-white">
     <div class="hero-body">
       <div class="container has-text-centered">
-
         <!-- Paper Title -->
         <h1 class="title is-1">Video Stitching from Multiple Cameras</h1>
-
         <!-- Authors -->
         <p class="subtitle is-5">
           Anonymous Authors
         </p>
-
         <!-- Affiliation & Conference -->
         <p class="subtitle is-6">The Thirty-Ninth Annual Conference on Neural Information Processing Systems</p>
       
       </div>
     </div>
   </section>
-
   <!-- Abstract Section -->
   <section class="section">
     <div class="container">
@@ -51,14 +48,60 @@
       </div>
     </div>
   </section>
-
   <!-- Key Figure -->
   <section class="section">
     <div class="container has-text-centered">
       <h2 class="title is-3">Key Figure</h2>
-        <img src="Rocket_Raccoon_singing_in_a_spaceship,_from_Guardians_of_the_Galaxy_Vol_3,_2023.png" alt="Description of the figure">
+      <img src="Rocket_Raccoon_singing_in_a_spaceship,_from_Guardians_of_the_Galaxy_Vol_3,_2023.png" alt="Description of the figure">
     </div>
   </section>
 
+  <!-- Video Comparison Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Video Comparison</h2>
+      
+      <div class="video-gallery-container">
+        <button class="button nav-button nav-prev" onclick="navigateVideos(-1)">
+          <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+        </button>
+        
+        <div class="columns">
+          <div class="column">
+            <div class="video-panel">
+              <h3 class="video-title" id="sourceATitle">Source A - Video 1</h3>
+              <video id="videoA" controls class="has-ratio">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="video-panel">
+              <h3 class="video-title" id="sourceBTitle">Source B - Video 1</h3>
+              <video id="videoB" controls class="has-ratio">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="counter has-text-centered" id="counter">1/5</div>
+        
+        <button class="button nav-button nav-next" onclick="navigateVideos(1)">
+          <span class="icon">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/video-gallery.js"></script>
 </body>
 </html>
