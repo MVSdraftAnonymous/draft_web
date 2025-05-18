@@ -12,24 +12,7 @@ const videoPairs = [
         titleA: "Source A - Video 2",
         titleB: "Source B - Video 2"
     },
-    { 
-        sourceA: "videos/video3A.mp4", 
-        sourceB: "videos/video3B.mp4",
-        titleA: "Source A - Video 3",
-        titleB: "Source B - Video 3"
-    },
-    { 
-        sourceA: "videos/video4A.mp4", 
-        sourceB: "videos/video4B.mp4",
-        titleA: "Source A - Video 4",
-        titleB: "Source B - Video 4"
-    },
-    { 
-        sourceA: "videos/video5A.mp4", 
-        sourceB: "videos/video5B.mp4",
-        titleA: "Source A - Video 5",
-        titleB: "Source B - Video 5"
-    }
+    
 ];
 
 // State variables
