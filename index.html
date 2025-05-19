@@ -16,6 +16,19 @@
   <link rel="stylesheet" href="css/index.css">
   <!-- Video Gallery CSS -->
   <link rel="stylesheet" href="css/video-gallery-css.css">
+  
+  <!-- Image Comparison Slider Library -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+  
+  <!-- Video Comparison Slider Custom CSS -->
+  <link rel="stylesheet" href="css/video-comparison-slider.css">
 </head>
 <body>
   <!-- Header Hero -->
@@ -111,6 +124,58 @@
         <button class="button is-rounded nav-button nav-next" onclick="navigateVideos(1)">
           <span class="arrow-icon">&#8594;</span>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Sliding Comparison Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Video Sliding Comparison</h2>
+      
+      <div class="slider-container">
+        <img-comparison-slider id="video-slider">
+          <figure slot="first" class="before">
+            <video 
+              id="sliderVideoA"
+              width="100%"
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+              loop
+            >
+              <source src="videos/sample1A.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption id="sliderTitleA">Ours</figcaption>
+          </figure>
+          <figure slot="second" class="after">
+            <video 
+              id="sliderVideoB"
+              width="100%"
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+              loop
+            >
+              <source src="videos/sample1B.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption id="sliderTitleB">Stabstitch</figcaption>
+          </figure>
+        </img-comparison-slider>
+        
+        <div class="slider-navigation">
+          <button class="button is-rounded slider-nav-button" onclick="navigateSliderVideos(-1)">
+            <span class="arrow-icon">&#8592;</span>
+          </button>
+          <div class="slider-counter has-text-centered" id="sliderCounter">1/5</div>
+          <button class="button is-rounded slider-nav-button" onclick="navigateSliderVideos(1)">
+            <span class="arrow-icon">&#8594;</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
