@@ -103,3 +103,27 @@ body {
   font-family: 'Merriweather', serif !important;
   color: #4a90e2 !important;
 }
+
+
+/* Container */
+.pagination-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;          /* spacing between dots */
+  margin-top:1rem;  /* push it away from the videos */
+}
+
+/* Base dot */
+.pagination-dots .dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#cfcfcf;           /* inactive colour */
+  transition:background .25s;
+}
+
+/* Active (current) dot */
+.pagination-dots .dot.active{
+  background:#ffffff;           /* active colour */
+}
+
