@@ -1,0 +1,93 @@
+/* Video Comparison Slider Custom CSS */
+
+/* Container for the slider */
+.slider-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Style for the image comparison slider */
+img-comparison-slider {
+  --divider-width: 2px;
+  --divider-color: #4a4a4a;
+  --handle-size: 40px;
+  --handle-color: #3273dc;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  --handle-opacity: 0.9;
+}
+
+/* Make sure the videos fill the entire slider area */
+#video-slider video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style for captions within the slider */
+.before figcaption,
+.after figcaption {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  color: #2e3452;
+  padding: 4px 8px;
+  position: absolute;
+  top: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Position captions on left and right sides */
+.before figcaption {
+  left: 10px;
+}
+
+.after figcaption {
+  right: 10px;
+}
+
+/* Navigation buttons for the slider */
+.slider-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.slider-nav-button {
+  background-color: #3273dc;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-nav-button:hover {
+  background-color: #276cda;
+}
+
+.slider-counter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+/* Make sure figures take up the full size of the container */
+figure {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
