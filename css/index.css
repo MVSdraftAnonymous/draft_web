@@ -119,11 +119,12 @@ body {
   height:10px;
   border-radius:50%;
   background:#cfcfcf;           /* inactive colour */
-  transition:background .25s;
+  transition:all .25s;
 }
 
 /* Active (current) dot */
 .pagination-dots .dot.active{
   background:#ffffff;           /* active colour */
+  transform:scale(1.5);
 }
 
