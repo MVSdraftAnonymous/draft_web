@@ -24,7 +24,7 @@ const totalPairs      = videoPairs.length;
    DOM look-ups
 ------------------------------------------------------------ */
 /* Regular gallery */
-const videoA        = document.getElementById("224");
+const videoA        = document.getElementById("videoA");
 const videoB        = document.getElementById("videoB");
 const sourceATitle  = document.getElementById("sourceATitle");
 const sourceBTitle  = document.getElementById("sourceBTitle");
