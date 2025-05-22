@@ -108,10 +108,12 @@ body {
 /* Container */
 .pagination-dots{
   display:flex;
-  justify-content:center;
-  gap:8px;          /* spacing between dots */
-  margin-top:1rem;  /* push it away from the videos */
+  flex-direction: column;  /* ADD THIS for vertical */
+  align-items: center;     /* Centers dots horizontally */
+  gap:8px;
+  margin-top: 1rem;       /* Adjust as needed */
 }
+
 
 /* Base dot */
 .pagination-dots .dot{

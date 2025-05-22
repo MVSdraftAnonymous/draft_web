@@ -46,19 +46,7 @@
       </div>
     </div>
   </section>
-  <!-- Abstract Section -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Abstract</h2>
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus.
-          Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate
-          nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh.
-        </p>
-      </div>
-    </div>
-  </section>
+ 
   <!-- Key Figure -->
   <section class="section">
     <div class="container has-text-centered">
@@ -68,9 +56,64 @@
   </section>
 
   <!-- Video Comparison Section -->
+  <!-- Video Sliding Comparison Section N=2 -->
+<section class="section">
+    <div class="container">
+      <h2 class="title is-3"> 2 Input Videos:</h2>
+      
+      <div class="video-gallery-container">
+        <button class="button is-rounded nav-button nav-prev" onclick="navigateVideos(-1)">
+          <span class="arrow-icon">&#8592;</span>
+        </button>
+        
+        <div class="columns">
+          <div class="column">
+            <div class="video-panel">
+              <h3 class="video-title" id="sourceATitle"> Ours </h3>
+              <video
+                id="videoA"
+                class="has-ratio"
+                width="100%"
+                controls
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                loop
+              >
+                <source src="videos/sample1A.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="video-panel">
+              <h3 class="video-title" id="sourceBTitle"> Stabstitch </h3>
+              <video
+                id="videoB"
+                class="has-ratio"
+                width="100%"
+                controls
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                loop
+              >
+                <source src="videos/sample1B.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+  <!-- Video Sliding Comparison Section N=3 -->
+
   <section class="section">
     <div class="container">
-      <h2 class="title is-3">N = 3 comparison:</h2>
+      <h2 class="title is-3"> 3 Input Videos:</h2>
       
       <div class="video-gallery-container">
         <button class="button is-rounded nav-button nav-prev" onclick="navigateVideos(-1)">
