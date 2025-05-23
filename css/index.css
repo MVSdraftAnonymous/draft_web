@@ -96,7 +96,7 @@ body {
 /* Override Bulma hero fonts for your header */
 .hero .title.is-1 {
   font-family: 'Montserrat', sans-serif !important;
-  color: #5e86b1 !important;
+  color: #044e78 !important;
 }
 .hero .subtitle.is-5,
 .hero .subtitle.is-6 {
