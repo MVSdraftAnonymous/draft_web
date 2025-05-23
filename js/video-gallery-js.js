@@ -8,6 +8,7 @@ const videoData = [
 
 const tripletsData = [
   { src: "videos/41.mp4" },
+  { src: "videos/mountain.mp4" },
   { src: "videos/40.mp4" }
 ];
 
