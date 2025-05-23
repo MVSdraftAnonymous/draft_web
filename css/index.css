@@ -111,7 +111,8 @@ body {
   justify-content: center !important;
   align-items: center !important;
   gap:8px;
-  margin-top: 1rem;
+  margin: 1rem auto;     /* Center and add margin top/bottom */
+  padding: 10px 0;       /* Add some padding */
 }
 
 /* Base dot */
