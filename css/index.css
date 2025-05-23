@@ -93,10 +93,10 @@ body {
   font-size: smaller;
 }
 
-/* Override Bulma hero fonts for your header */
+/* Override Bulma hero fonts for your header Montserrat */
 .hero .title.is-2 {
-  font-family: 'Montserrat', sans-serif !important;
-  color: #044e78 !important;
+  font-family: 'Georgia', serif !important;
+  color: #9f44d1 !important;
 }
 .hero .subtitle.is-5,
 .hero .subtitle.is-6 {
