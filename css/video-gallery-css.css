@@ -69,10 +69,7 @@ video {
 }
 
 .counter {
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;      /* ADD: center the counter */
+  display: none;
 }
 
 /* Responsive adjustments */
