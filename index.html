@@ -56,6 +56,50 @@
   </section>
 
   <!-- Video Comparison Section -->
+  <!-- Video Sliding Comparison Section N=3 -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3" id="galleryTitleTriplets"> Visual Comparison On 3 Input Videos:</h2>
+    
+        <div class="video-gallery-container">
+          <button class="button is-rounded nav-button nav-prev" onclick="navigateVideosTriplets(-1)">
+            <span class="arrow-icon">&#8592;</span>
+          </button>
+        
+        <!-- Single video container instead of columns -->
+          <div class="single-video-container">
+            <div class="video-panel">
+              <h3 class="video-title" id="currentVideoTitleTriplets">Visual comparison</h3>
+              <video
+                id="currentVideoTriplets"
+                class="has-ratio"
+                width="100%"
+                controls
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                loop
+              >
+                <source id="currentVideoSourceTriplets" src="videos/41.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+          <button class="button is-rounded nav-button nav-next" onclick="navigateVideosTriplets(1)">
+            <span class="arrow-icon">&#8594;</span>
+          </button>
+      </div>
+      
+      <!-- Pagination dots -->
+      <div id="paginationTriplets" class="pagination-dots"></div>
+      
+      <!-- Counter -->
+      <div class="counter has-text-centered" id="videoCounterTriplets">1/2</div>
+    </div>
+  </section>
+  
   <!-- Video Sliding Comparison Section N=2 -->
   <section class="section">
     <div class="container">
@@ -100,48 +144,7 @@
     </div>
   </section>
 
-  <!-- Video Sliding Comparison Section N=3 -->
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-3" id="galleryTitleTriplets">3 Input Videos:</h2>
-      <div class="video-gallery-container">
-        <button class="button is-rounded nav-button nav-prev" onclick="navigateVideosTriplets(-1)">
-          <span class="arrow-icon">&#8592;</span>
-        </button>
-        
-        <!-- Single video container instead of columns -->
-        <div class="single-video-container">
-          <div class="video-panel">
-            <h3 class="video-title" id="currentVideoTitleTriplets">Visual comparison</h3>
-            <video
-              id="currentVideoTriplets"
-              class="has-ratio"
-              width="100%"
-              controls
-              autoplay
-              muted
-              playsinline
-              preload="auto"
-              loop
-            >
-              <source id="currentVideoSourceTriplets" src="videos/40.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        
-        <button class="button is-rounded nav-button nav-next" onclick="navigateVideosTriplets(1)">
-          <span class="arrow-icon">&#8594;</span>
-        </button>
-      </div>
-      
-      <!-- Pagination dots -->
-      <div id="paginationTriplets" class="pagination-dots"></div>
-      
-      <!-- Counter -->
-      <div class="counter has-text-centered" id="videoCounterTriplets">1/2</div>
-    </div>
-  </section>
+
 
 
 
@@ -150,7 +153,7 @@
   <!-- Video Sliding Comparison Section -->
   <section class="section">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Video Sliding Comparison</h2>
+      <h2 class="title is-3 has-text-centered"> Visualization  of the Panoramic Video in feature space </h2>
       
       <div class="slider-container">
         <img-comparison-slider id="video-slider">

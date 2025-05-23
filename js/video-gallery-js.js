@@ -7,8 +7,8 @@ const videoData = [
 ];
 
 const tripletsData = [
-  { title: "Visual comparison", src: "videos/40.mp4" },
-  { title: "Visual comparison", src: "videos/41.mp4" }
+  { title: "MMCD dataset", src: "videos/41.mp4" },
+  { title: "MMCD dataset", src: "videos/40.mp4" }
 ];
 
 // Slider video pairs (keeping original structure)
