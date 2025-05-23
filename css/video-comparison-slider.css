@@ -33,7 +33,6 @@ img-comparison-slider {
 .before figcaption,
 .after figcaption {
   background: rgba(255, 255, 255, 0.95);  /* More opaque background */
-  border: 1px solid #e0e0e0;              /* Lighter border */
   border-radius: 8px;                     /* More rounded corners */
   color: #2e3452;
   padding: 8px 16px;                      /* More padding */
