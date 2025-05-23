@@ -2,24 +2,21 @@
    Video gallery configuration
 ------------------------------------------------------------ */
 const videoData = [
-  { title: "Ours", src: "videos/175.mp4" },
-  { title: "Stabstitch", src: "videos/stabstitch_175.mp4" },
-  { title: "Method 3", src: "videos/method3_175.mp4" },
-  { title: "Method 4", src: "videos/method4_175.mp4" },
-  { title: "Ground Truth", src: "videos/gt_175.mp4" }
+  { title: "Fast Moving", src: "videos/175.mp4" },
+  { title: "40", src: "videos/40.mp4" },
 ];
 
 // Slider video pairs (keeping original structure)
 const videoPairs = [
   { 
     sourceA: "videos/175.mp4", 
-    sourceB: "videos/stabstitch_175.mp4", 
+    sourceB: "videos/40.mp4", 
     titleA: "Ours", 
-    titleB: "Stabstitch" 
+    titleB: "40" 
   },
   { 
-    sourceA: "videos/method3_175.mp4", 
-    sourceB: "videos/method4_175.mp4", 
+    sourceA: "videos/175.mp4", 
+    sourceB: "videos/40.mp4", 
     titleA: "Method 3", 
     titleB: "Method 4" 
   }
