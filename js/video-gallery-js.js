@@ -2,13 +2,13 @@
    Video gallery configuration
 ------------------------------------------------------------ */
 const videoData = [
-  { title: "Fast Moving", src: "videos/175.mp4" },
-  { title: "Fast Moving", src: "videos/40.mp4" }
+  {src: "videos/175.mp4" },
+  {src: "videos/40.mp4" }
 ];
 
 const tripletsData = [
-  { title: "MMCD dataset", src: "videos/41.mp4" },
-  { title: "MMCD dataset", src: "videos/40.mp4" }
+  { src: "videos/41.mp4" },
+  { src: "videos/40.mp4" }
 ];
 
 // Slider video pairs (keeping original structure)
@@ -40,7 +40,6 @@ const totalPairs = videoPairs.length;
 /* Single video gallery n=2 */
 const currentVideo = document.getElementById("currentVideo");
 const currentVideoSource = document.getElementById("currentVideoSource");
-const currentVideoTitle = document.getElementById("currentVideoTitle");
 const videoCounter = document.getElementById("videoCounter");
 const galleryTitle = document.getElementById("galleryTitle");
 const pagination = document.getElementById("pagination");
@@ -48,7 +47,6 @@ const pagination = document.getElementById("pagination");
 /* Single video gallery n=3 - FIXED: Different IDs */
 const currentVideoTriplets = document.getElementById("currentVideoTriplets");
 const currentVideoSourceTriplets = document.getElementById("currentVideoSourceTriplets");
-const currentVideoTitleTriplets = document.getElementById("currentVideoTitleTriplets");
 const videoCounterTriplets = document.getElementById("videoCounterTriplets");
 const galleryTitleTriplets = document.getElementById("galleryTitleTriplets");
 const paginationTriplets = document.getElementById("paginationTriplets");
@@ -92,7 +90,6 @@ function updateVideo() {
   
   // Update video source and title
   currentVideoSource.src = videoInfo.src;
-  currentVideoTitle.textContent = videoInfo.title;
   
   // Update counter and gallery title
   if (videoCounter) {
@@ -116,7 +113,6 @@ function updateVideoTriplets() {
   
   // Update video source and title
   currentVideoSourceTriplets.src = videoInfo.src;
-  currentVideoTitleTriplets.textContent = videoInfo.title;
   
   // Update counter and gallery title
   if (videoCounterTriplets) {
