@@ -95,8 +95,8 @@ body {
 
 /* Override Bulma hero fonts for your header */
 .hero .title.is-1 {
-  font-family: 'Merriweather', sans-serif !important;
-  color: #2e2488 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  color: #5e86b1 !important;
 }
 .hero .subtitle.is-5,
 .hero .subtitle.is-6 {
@@ -127,7 +127,7 @@ body {
 /* Active (current) dot */
 .pagination-dots .dot.active{
   background:#4141427a;
-  outline:2px solid #676baf4d;  /* subtle ring */
+  outline:2px solid #fdfdfd4d;  /* subtle ring */
   transform:scale(1.8);
   
 }
