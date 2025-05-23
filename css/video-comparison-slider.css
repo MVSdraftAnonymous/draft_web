@@ -104,3 +104,27 @@ figure {
   width: 100%;
   position: relative;
 }
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #d7dbe1;
+}
+
+.dot:hover {
+  background-color: #bbb;
+}
