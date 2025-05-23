@@ -3,7 +3,7 @@
 ------------------------------------------------------------ */
 const videoData = [
   {src: "videos/175.mp4" },
-  {src: "videos/40.mp4" }
+  {src: "videos/224.mp4" }
 ];
 
 const tripletsData = [
@@ -18,13 +18,13 @@ const videoPairs = [
     sourceA: "videos/40_pano.mp4", 
     sourceB: "videos/40_dino.mp4", 
     titleA: "Panoramic Video", 
-    titleB: "DINO" 
+    titleB: "DINO Panoramic Video" 
   },
   { 
     sourceA: "videos/case4_pano.mp4", 
     sourceB: "videos/case4_dino.mp4", 
     titleA: "Panoramic Video", 
-    titleB: "DINO" 
+    titleB: "DINO Panoramic Video" 
   }
 ];
 
