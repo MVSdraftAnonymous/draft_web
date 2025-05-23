@@ -17,13 +17,13 @@ const videoPairs = [
     sourceA: "videos/40_pano.mp4", 
     sourceB: "videos/40_dino.mp4", 
     titleA: "Panoramic Video", 
-    titleB: "DINO based Panoramic Video" 
+    titleB: "DINO" 
   },
   { 
     sourceA: "videos/case4_pano.mp4", 
     sourceB: "videos/case4_dino.mp4", 
     titleA: "Panoramic Video", 
-    titleB: "DINO based Panoramic Video" 
+    titleB: "DINO" 
   }
 ];
 
