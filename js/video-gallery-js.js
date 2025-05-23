@@ -3,7 +3,7 @@
 ------------------------------------------------------------ */
 const videoData = [
   { title: "Fast Moving", src: "videos/175.mp4" },
-  { title: "40", src: "videos/40.mp4" },
+  { title: "40", src: "videos/40.mp4" }
 ];
 
 // Slider video pairs (keeping original structure)
