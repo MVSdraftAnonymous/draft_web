@@ -18,8 +18,15 @@ const videoPairs = [
     sourceA: "videos/40_pano.mp4", 
     sourceB: "videos/40_dino.mp4", 
     titleA: "Panoramic Video", 
-    titleB: "DINO based features maps Panorama" 
+    titleB: "DINO based Panoramic Video" 
+  },
+  { 
+    sourceA: "videos/case4_pano.mp4", 
+    sourceB: "videos/case4_dino.mp4", 
+    titleA: "Panoramic Video", 
+    titleB: "DINO based Panoramic Video" 
   }
+
 ];
 
 let currentVideoIndex = 0;
