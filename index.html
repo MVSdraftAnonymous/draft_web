@@ -151,54 +151,61 @@
 
 
   <!-- Video Sliding Comparison Section -->
+  <!-- Video Sliding Comparison Section -->
   <section class="section">
     <div class="container">
-      <h2 class="title is-3 has-text-centered"> Visualization  of the Panoramic Video in feature space </h2>
+      <h2 class="title is-3 has-text-centered">Visualization of the Panoramic Video in feature space</h2>
       
-      <div class="slider-container">
-        <img-comparison-slider id="video-slider">
-          <figure slot="first" class="before">
-            <video 
-              id="sliderVideoA"
-              width="100%"
-              autoplay
-              muted
-              playsinline
-              preload="auto"
-              loop
-            >
-              <source src="videos/40_pano.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption id="sliderTitleA">Ours</figcaption>
-          </figure>
-          <figure slot="second" class="after">
-            <video 
-              id="sliderVideoB"
-              width="100%"
-              autoplay
-              muted
-              playsinline
-              preload="auto"
-              loop
-            >
-              <source src="videos/40_dino.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption id="sliderTitleB">Stabstitch</figcaption>
-          </figure>
-        </img-comparison-slider>
+      <div class="video-gallery-container">
+        <!-- Left navigation button - same as above sections -->
+        <button class="button is-rounded nav-button nav-prev" onclick="navigateSliderVideos(-1)">
+          <span class="arrow-icon">&#8592;</span>
+        </button>
         
-        <div class="slider-navigation">
-          <button class="button is-rounded slider-nav-button" onclick="navigateSliderVideos(-1)">
-            <span class="arrow-icon">&#8592;</span>
-          </button>
-          <div class="slider-counter has-text-centered" id="sliderCounter">1/5</div>
-          <button class="button is-rounded slider-nav-button" onclick="navigateSliderVideos(1)">
-            <span class="arrow-icon">&#8594;</span>
-          </button>
+        <!-- Single video container - same structure as above -->
+        <div class="single-video-container">
+          <img-comparison-slider id="video-slider">
+            <figure slot="first" class="before">
+              <video 
+                id="sliderVideoA"
+                width="100%"
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                loop
+              >
+                <source src="videos/40_pano.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption id="sliderTitleA">Ours</figcaption>
+            </figure>
+            <figure slot="second" class="after">
+              <video 
+                id="sliderVideoB"
+                width="100%"
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                loop
+              >
+                <source src="videos/40_dino.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </source>
+              <figcaption id="sliderTitleB">Stabstitch</figcaption>
+            </figure>
+          </img-comparison-slider>
         </div>
+        
+        <!-- Right navigation button - same as above sections -->
+        <button class="button is-rounded nav-button nav-next" onclick="navigateSliderVideos(1)">
+          <span class="arrow-icon">&#8594;</span>
+        </button>
       </div>
+      
+      <!-- Pagination dots -->
+      <div id="sliderPagination" class="pagination-dots"></div>
     </div>
   </section>
 

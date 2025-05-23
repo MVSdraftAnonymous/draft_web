@@ -2,9 +2,12 @@
 
 /* Container for the slider */
 .slider-container {
-  max-width: 1000px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style for the image comparison slider */
@@ -25,6 +28,8 @@ img-comparison-slider {
   height: 100%;
   object-fit: cover;
 }
+
+
 
 /* Style for captions within the slider */
 .before figcaption,
@@ -50,30 +55,38 @@ img-comparison-slider {
   right: 10px;
 }
 
-/* Navigation buttons for the slider */
-.slider-navigation {
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-.slider-nav-button {
+  justify-content: center;
   background-color: #d7dbe1;
   color: white;
-  border: none;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 10;             /* ADD: ensure buttons are above video */
 }
 
-.slider-nav-button:hover {
+.nav-button:hover {
   background-color: #d7dbe1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-prev {
+  left: 10px;              /* CHANGE: move slightly inward */
+}
+
+.nav-next {
+  right: 10px;             /* CHANGE: move slightly inward */
+}
+
+.arrow-icon {
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .slider-counter {
