@@ -11,7 +11,6 @@ const tripletsData = [
   { title: "Visual comparison", src: "videos/41.mp4" }
 ];
 
-
 // Slider video pairs (keeping original structure)
 const videoPairs = [
   { 
@@ -26,26 +25,33 @@ const videoPairs = [
     titleA: "Panoramic Video", 
     titleB: "DINO based Panoramic Video" 
   }
-
 ];
 
 let currentVideoIndex = 0;
-let tripletsVideoIndex = 0;
+let currentVideoIndexTriplets = 0;
 let currentPairIndex = 0;
 const totalVideos = videoData.length;
-const totalTriplets = tripletsData.length;
+const totalVideosTriplets = tripletsData.length;
 const totalPairs = videoPairs.length;
 
 /* ------------------------------------------------------------
    DOM look-ups
 ------------------------------------------------------------ */
-/* Single video gallery */
+/* Single video gallery n=2 */
 const currentVideo = document.getElementById("currentVideo");
 const currentVideoSource = document.getElementById("currentVideoSource");
 const currentVideoTitle = document.getElementById("currentVideoTitle");
 const videoCounter = document.getElementById("videoCounter");
 const galleryTitle = document.getElementById("galleryTitle");
 const pagination = document.getElementById("pagination");
+
+/* Single video gallery n=3 - FIXED: Different IDs */
+const currentVideoTriplets = document.getElementById("currentVideoTriplets");
+const currentVideoSourceTriplets = document.getElementById("currentVideoSourceTriplets");
+const currentVideoTitleTriplets = document.getElementById("currentVideoTitleTriplets");
+const videoCounterTriplets = document.getElementById("videoCounterTriplets");
+const galleryTitleTriplets = document.getElementById("galleryTitleTriplets");
+const paginationTriplets = document.getElementById("paginationTriplets");
 
 /* Slider gallery */
 const sliderVideoA = document.getElementById("sliderVideoA");
@@ -57,20 +63,14 @@ const sliderPagination = document.getElementById("sliderPagination");
 /* ------------------------------------------------------------
    Helpers for dot indicators
 ------------------------------------------------------------ */
-function renderDots(container, total) {
+function renderDots(container, total, clickHandler) {
   if (!container) return;
   container.innerHTML = "";
   for (let i = 0; i < total; i++) {
     const dot = document.createElement("span");
     dot.classList.add("dot");
     if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => {
-      if (container === pagination) {
-        goToVideo(i);
-      } else {
-        goToPair(i);
-      }
-    });
+    dot.addEventListener("click", () => clickHandler(i));
     container.appendChild(dot);
   }
 }
@@ -109,13 +109,46 @@ function updateVideo() {
   updateDots(pagination, currentVideoIndex);
 }
 
+function updateVideoTriplets() {
+  if (!currentVideoTriplets || !currentVideoSourceTriplets || !currentVideoTitleTriplets) return;
+  
+  const videoInfo = tripletsData[currentVideoIndexTriplets];
+  
+  // Update video source and title
+  currentVideoSourceTriplets.src = videoInfo.src;
+  currentVideoTitleTriplets.textContent = videoInfo.title;
+  
+  // Update counter and gallery title
+  if (videoCounterTriplets) {
+    videoCounterTriplets.textContent = `${currentVideoIndexTriplets + 1}/${totalVideosTriplets}`;
+  }
+  if (galleryTitleTriplets) {
+    galleryTitleTriplets.textContent = `${totalVideosTriplets} Input Videos:`;
+  }
+  
+  // Reload video
+  currentVideoTriplets.load();
+  
+  // Update dots
+  updateDots(paginationTriplets, currentVideoIndexTriplets);
+}
+
 function goToVideo(index) {
   currentVideoIndex = (index + totalVideos) % totalVideos;
   updateVideo();
 }
 
+function goToVideoTriplets(index) {
+  currentVideoIndexTriplets = (index + totalVideosTriplets) % totalVideosTriplets;
+  updateVideoTriplets();
+}
+
 function navigateVideos(direction) {
   goToVideo(currentVideoIndex + direction);
+}
+
+function navigateVideosTriplets(direction) {
+  goToVideoTriplets(currentVideoIndexTriplets + direction);
 }
 
 /* ------------------------------------------------------------
@@ -185,15 +218,21 @@ function syncSliderVideos() {
    Init on DOM ready
 ------------------------------------------------------------ */
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize single video gallery
+  // Initialize N=2 video gallery
   if (pagination && currentVideo) {
-    renderDots(pagination, totalVideos);
+    renderDots(pagination, totalVideos, goToVideo);
     updateVideo();
+  }
+  
+  // Initialize N=3 video gallery (TRIPLETS)
+  if (paginationTriplets && currentVideoTriplets) {
+    renderDots(paginationTriplets, totalVideosTriplets, goToVideoTriplets);
+    updateVideoTriplets();
   }
   
   // Initialize slider gallery
   if (sliderPagination && sliderVideoA && sliderVideoB) {
-    renderDots(sliderPagination, totalPairs);
+    renderDots(sliderPagination, totalPairs, goToPair);
     loadSliderVideos();
     syncSliderVideos();
   }
