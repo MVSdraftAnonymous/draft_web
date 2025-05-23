@@ -15,7 +15,7 @@ img-comparison-slider {
   --divider-width: 2px;
   --divider-color: #4a4a4a;
   --handle-size: 40px;
-  --handle-color: #d7dbe1;
+  --handle-color: #f6e2c2;
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -32,27 +32,48 @@ img-comparison-slider {
 /* Style for captions within the slider */
 .before figcaption,
 .after figcaption {
-  background: rgba(255, 255, 255, 0.9) !important;  /* Increased opacity and force override */
-  border: 1px solid #c3c7ca !important;
-  border-radius: 4px !important;
-  color: #2e3452 !important;
-  padding: 6px 10px !important;  /* Slightly more padding for better appearance */
-  position: absolute !important;
-  top: 10px !important;
-  font-size: 16px !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 600 !important;
-  backdrop-filter: blur(2px);  /* Optional: adds slight blur for better readability */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Optional: subtle shadow */
+  background: rgba(255, 255, 255, 0.95);  /* More opaque background */
+  border: 1px solid #e0e0e0;              /* Lighter border */
+  border-radius: 8px;                     /* More rounded corners */
+  color: #2e3452;
+  padding: 8px 16px;                      /* More padding */
+  position: absolute;
+  top: 15px;                              /* Move down slightly */
+  font-size: 14px;                        /* Smaller, cleaner font */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;                       /* Less bold */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Add subtle shadow */
+  z-index: 20;                            /* Ensure above video */
+  white-space: nowrap;                    /* Prevent text wrapping */
+  max-width: 200px;                       /* Limit width */
+  text-align: center;                     /* Center text */
 }
 
-/* Position captions on left and right sides */
+/* Position captions with more spacing from edges */
 .before figcaption {
-  left: 10px !important;
+  left: 20px;                             /* More space from left */
 }
 
 .after figcaption {
-  right: 10px !important;
+  right: 20px;                            /* More space from right */
+}
+
+/* Responsive caption adjustments */
+@media screen and (max-width: 768px) {
+  .before figcaption,
+  .after figcaption {
+    font-size: 12px;                     /* Smaller on mobile */
+    padding: 6px 12px;                   /* Less padding on mobile */
+    top: 10px;                           /* Higher on mobile */
+  }
+  
+  .before figcaption {
+    left: 10px;
+  }
+  
+  .after figcaption {
+    right: 10px;
+  }
 }
 
 .nav-button {
