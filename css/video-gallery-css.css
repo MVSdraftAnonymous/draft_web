@@ -44,14 +44,14 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #3273dc;
+  background-color: #d7dbe1;
   color: white;
   transition: background-color 0.3s, transform 0.2s;
   z-index: 10;             /* ADD: ensure buttons are above video */
 }
 
 .nav-button:hover {
-  background-color: #2366d1;
+  background-color: #d7dbe1;
   transform: translateY(-50%) scale(1.1);
 }
 

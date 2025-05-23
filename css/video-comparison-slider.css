@@ -12,7 +12,7 @@ img-comparison-slider {
   --divider-width: 2px;
   --divider-color: #4a4a4a;
   --handle-size: 40px;
-  --handle-color: #3273dc;
+  --handle-color: #d7dbe1;
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -30,7 +30,7 @@ img-comparison-slider {
 .before figcaption,
 .after figcaption {
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid #c0c0c0;
+  border: 1px solid #d7dbe1;
   border-radius: 4px;
   color: #2e3452;
   padding: 4px 8px;
@@ -60,7 +60,7 @@ img-comparison-slider {
 }
 
 .slider-nav-button {
-  background-color: #3273dc;
+  background-color: #d7dbe1;
   color: white;
   border: none;
   width: 36px;
@@ -73,7 +73,7 @@ img-comparison-slider {
 }
 
 .slider-nav-button:hover {
-  background-color: #276cda;
+  background-color: #d7dbe1;
 }
 
 .slider-counter {
