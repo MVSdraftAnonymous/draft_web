@@ -1,111 +1,131 @@
 /* ------------------------------------------------------------
    Video gallery configuration
 ------------------------------------------------------------ */
-const videoPairs = [
-  {
-    sourceA: "videos/video1A.mp4",
-    sourceB: "videos/video1B.mp4",
-    titleA : "Source A - Video 1",
-    titleB : "Source B - Video 1"
-  },
-  {
-    sourceA: "videos/video2A.mp4",
-    sourceB: "videos/video2B.mp4",
-    titleA : "Source A - Video 2",
-    titleB : "Source B - Video 2"
-  },
-  // …add more pairs here…
+const videoData = [
+  { title: "Ours", src: "videos/175.mp4" },
+  { title: "Stabstitch", src: "videos/stabstitch_175.mp4" },
+  { title: "Method 3", src: "videos/method3_175.mp4" },
+  { title: "Method 4", src: "videos/method4_175.mp4" },
+  { title: "Ground Truth", src: "videos/gt_175.mp4" }
 ];
 
+// Slider video pairs (keeping original structure)
+const videoPairs = [
+  { 
+    sourceA: "videos/175.mp4", 
+    sourceB: "videos/stabstitch_175.mp4", 
+    titleA: "Ours", 
+    titleB: "Stabstitch" 
+  },
+  { 
+    sourceA: "videos/method3_175.mp4", 
+    sourceB: "videos/method4_175.mp4", 
+    titleA: "Method 3", 
+    titleB: "Method 4" 
+  }
+  // Add more pairs as needed
+];
+
+let currentVideoIndex = 0;
 let currentPairIndex = 0;
-const totalPairs      = videoPairs.length;
+const totalVideos = videoData.length;
+const totalPairs = videoPairs.length;
 
 /* ------------------------------------------------------------
    DOM look-ups
 ------------------------------------------------------------ */
-/* Regular gallery */
-const videoA        = document.getElementById("videoA");
-const videoB        = document.getElementById("videoB");
-const sourceATitle  = document.getElementById("sourceATitle");
-const sourceBTitle  = document.getElementById("sourceBTitle");
-const pagination    = document.getElementById("pagination");          // ◉◉◉ dots
+/* Single video gallery */
+const currentVideo = document.getElementById("currentVideo");
+const currentVideoSource = document.getElementById("currentVideoSource");
+const currentVideoTitle = document.getElementById("currentVideoTitle");
+const videoCounter = document.getElementById("videoCounter");
+const galleryTitle = document.getElementById("galleryTitle");
+const pagination = document.getElementById("pagination");
 
 /* Slider gallery */
-const sliderVideoA  = document.getElementById("sliderVideoA");
-const sliderVideoB  = document.getElementById("sliderVideoB");
-const sliderTitleA  = document.getElementById("sliderTitleA");
-const sliderTitleB  = document.getElementById("sliderTitleB");
-const sliderPagination = document.getElementById("sliderPagination"); // ◉◉◉ dots
+const sliderVideoA = document.getElementById("sliderVideoA");
+const sliderVideoB = document.getElementById("sliderVideoB");
+const sliderTitleA = document.getElementById("sliderTitleA");
+const sliderTitleB = document.getElementById("sliderTitleB");
+const sliderPagination = document.getElementById("sliderPagination");
 
 /* ------------------------------------------------------------
    Helpers for dot indicators
 ------------------------------------------------------------ */
 function renderDots(container, total) {
+  if (!container) return;
   container.innerHTML = "";
   for (let i = 0; i < total; i++) {
     const dot = document.createElement("span");
     dot.classList.add("dot");
     if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => goToPair(i)); // optional click-to-jump
+    dot.addEventListener("click", () => {
+      if (container === pagination) {
+        goToVideo(i);
+      } else {
+        goToPair(i);
+      }
+    });
     container.appendChild(dot);
   }
 }
 
 function updateDots(container, index) {
+  if (!container) return;
   container
     .querySelectorAll(".dot")
     .forEach((d, i) => d.classList.toggle("active", i === index));
 }
 
 /* ------------------------------------------------------------
-   Regular gallery loader
+   Single video gallery functions
 ------------------------------------------------------------ */
-function loadCurrentVideoPair() {
-  const { sourceA, sourceB, titleA, titleB } = videoPairs[currentPairIndex];
+function updateVideo() {
+  if (!currentVideo || !currentVideoSource || !currentVideoTitle) return;
+  
+  const videoInfo = videoData[currentVideoIndex];
+  
+  // Update video source and title
+  currentVideoSource.src = videoInfo.src;
+  currentVideoTitle.textContent = videoInfo.title;
+  
+  // Update counter and gallery title
+  if (videoCounter) {
+    videoCounter.textContent = `${currentVideoIndex + 1}/${totalVideos}`;
+  }
+  if (galleryTitle) {
+    galleryTitle.textContent = `${totalVideos} Input Videos:`;
+  }
+  
+  // Reload video
+  currentVideo.load();
+  
+  // Update dots
+  updateDots(pagination, currentVideoIndex);
+}
 
-  /* 1) swap <source> tags */
-  videoA.innerHTML = `<source src="${sourceA}" type="video/mp4">`;
-  videoB.innerHTML = `<source src="${sourceB}" type="video/mp4">`;
+function goToVideo(index) {
+  currentVideoIndex = (index + totalVideos) % totalVideos;
+  updateVideo();
+}
 
-  /* 2) titles */
-  sourceATitle.textContent = titleA;
-  sourceBTitle.textContent = titleB;
-
-  /* 3) reload / play */
-  videoA.load();
-  videoB.load();
-
-  Promise.all([
-    videoA.readyState >= 2 ? Promise.resolve()
-                           : new Promise(res => (videoA.oncanplay = res)),
-    videoB.readyState >= 2 ? Promise.resolve()
-                           : new Promise(res => (videoB.oncanplay = res))
-  ])
-    .then(() => {
-      videoA.currentTime = 0;
-      videoB.currentTime = 0;
-      return Promise.all([videoA.play(), videoB.play()]);
-    })
-    .catch(err => console.warn("Autoplay failed:", err));
-
-  /* 4) update dots */
-  updateDots(pagination, currentPairIndex);
-
-  /* 5) keep slider gallery in sync */
-  loadSliderVideos();
+function navigateVideos(direction) {
+  goToVideo(currentVideoIndex + direction);
 }
 
 /* ------------------------------------------------------------
-   Slider gallery loader
+   Slider gallery functions (keeping original)
 ------------------------------------------------------------ */
 function loadSliderVideos() {
+  if (!sliderVideoA || !sliderVideoB) return;
+  
   const { sourceA, sourceB, titleA, titleB } = videoPairs[currentPairIndex];
 
   sliderVideoA.innerHTML = `<source src="${sourceA}" type="video/mp4">`;
   sliderVideoB.innerHTML = `<source src="${sourceB}" type="video/mp4">`;
 
-  sliderTitleA.textContent = titleA;
-  sliderTitleB.textContent = titleB;
+  if (sliderTitleA) sliderTitleA.textContent = titleA;
+  if (sliderTitleB) sliderTitleB.textContent = titleB;
 
   sliderVideoA.load();
   sliderVideoB.load();
@@ -128,16 +148,9 @@ function loadSliderVideos() {
   updateDots(sliderPagination, currentPairIndex);
 }
 
-/* ------------------------------------------------------------
-   Navigation helpers
------------------------------------------------------------- */
 function goToPair(index) {
   currentPairIndex = (index + totalPairs) % totalPairs;
-  loadCurrentVideoPair();
-}
-
-function navigateVideos(direction) {
-  goToPair(currentPairIndex + direction);
+  loadSliderVideos();
 }
 
 function navigateSliderVideos(direction) {
@@ -145,9 +158,11 @@ function navigateSliderVideos(direction) {
 }
 
 /* ------------------------------------------------------------
-   Slider playback sync
+   Slider playback sync (keeping original)
 ------------------------------------------------------------ */
 function syncSliderVideos() {
+  if (!sliderVideoA || !sliderVideoB) return;
+  
   sliderVideoA.addEventListener("play", () => sliderVideoB.play());
   sliderVideoB.addEventListener("play", () => sliderVideoA.play());
 
@@ -165,10 +180,16 @@ function syncSliderVideos() {
    Init on DOM ready
 ------------------------------------------------------------ */
 document.addEventListener("DOMContentLoaded", () => {
-  /* build dot bars once */
-  renderDots(pagination, totalPairs);
-  renderDots(sliderPagination, totalPairs);
-
-  loadCurrentVideoPair();
-  syncSliderVideos();
+  // Initialize single video gallery
+  if (pagination && currentVideo) {
+    renderDots(pagination, totalVideos);
+    updateVideo();
+  }
+  
+  // Initialize slider gallery
+  if (sliderPagination && sliderVideoA && sliderVideoB) {
+    renderDots(sliderPagination, totalPairs);
+    loadSliderVideos();
+    syncSliderVideos();
+  }
 });

@@ -4,6 +4,16 @@
   padding: 0 3rem;
 }
 
+/* ADD THIS - Single video container styling */
+.single-video-container {
+  width: 100%;
+  max-width: 600px;        /* Limit width so video isn't too wide */
+  margin: 0 auto;          /* Center the single video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .video-panel {
   border-radius: 6px;
   overflow: hidden;
@@ -15,6 +25,7 @@
   padding: 0.75rem;
   font-weight: 600;
   border-radius: 6px 6px 0 0;
+  text-align: center;      /* ADD: center the title */
 }
 
 video {
@@ -36,6 +47,7 @@ video {
   background-color: #3273dc;
   color: white;
   transition: background-color 0.3s, transform 0.2s;
+  z-index: 10;             /* ADD: ensure buttons are above video */
 }
 
 .nav-button:hover {
@@ -44,11 +56,11 @@ video {
 }
 
 .nav-prev {
-  left: 0;
+  left: 10px;              /* CHANGE: move slightly inward */
 }
 
 .nav-next {
-  right: 0;
+  right: 10px;             /* CHANGE: move slightly inward */
 }
 
 .arrow-icon {
@@ -60,6 +72,7 @@ video {
   margin-top: 1rem;
   font-size: 1rem;
   font-weight: 600;
+  text-align: center;      /* ADD: center the counter */
 }
 
 /* Responsive adjustments */
@@ -67,5 +80,17 @@ video {
   .video-gallery-container {
     padding: 0 2.5rem;
   }
+  
+  /* ADD: Make single video responsive */
+  .single-video-container {
+    max-width: 100%;
+  }
+  
+  .nav-prev {
+    left: 5px;
+  }
+  
+  .nav-next {
+    right: 5px;
+  }
 }
-

@@ -57,48 +57,48 @@
 
   <!-- Video Comparison Section -->
   <!-- Video Sliding Comparison Section N=2 -->
-<section class="section">
-  <div class="container">
-    <h2 class="title is-3" id="galleryTitle">2 Input Videos:</h2>
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3" id="galleryTitle">2 Input Videos:</h2>
     
-    <div class="video-gallery-container">
-      <button class="button is-rounded nav-button nav-prev" onclick="navigateVideos(-1)">
-        <span class="arrow-icon">&#8592;</span>
-      </button>
-      
-      <!-- Single video container instead of columns -->
-      <div class="single-video-container">
-        <div class="video-panel">
-          <h3 class="video-title" id="currentVideoTitle">Ours</h3>
-          <video
-            id="currentVideo"
-            class="has-ratio"
-            width="100%"
-            controls
-            autoplay
-            muted
-            playsinline
-            preload="auto"
-            loop
-          >
-            <source id="currentVideoSource" src="videos/sample1A.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <div class="video-gallery-container">
+        <button class="button is-rounded nav-button nav-prev" onclick="navigateVideos(-1)">
+          <span class="arrow-icon">&#8592;</span>
+        </button>
+        
+        <!-- Single video container instead of columns -->
+        <div class="single-video-container">
+          <div class="video-panel">
+            <h3 class="video-title" id="currentVideoTitle">Ours</h3>
+            <video
+              id="currentVideo"
+              class="has-ratio"
+              width="100%"
+              controls
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+              loop
+            >
+              <source id="currentVideoSource" src="videos/175.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
+        
+        <button class="button is-rounded nav-button nav-next" onclick="navigateVideos(1)">
+          <span class="arrow-icon">&#8594;</span>
+        </button>
       </div>
       
-      <button class="button is-rounded nav-button nav-next" onclick="navigateVideos(1)">
-        <span class="arrow-icon">&#8594;</span>
-      </button>
+      <!-- Pagination dots -->
+      <div id="pagination" class="pagination-dots"></div>
+      
+      <!-- Counter -->
+      <div class="counter has-text-centered" id="videoCounter">1/2</div>
     </div>
-    
-    <!-- Pagination dots -->
-    <div id="pagination" class="pagination-dots"></div>
-    
-    <!-- Counter -->
-    <div class="counter has-text-centered" id="videoCounter">1/2</div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Video Sliding Comparison Section N=3 -->
