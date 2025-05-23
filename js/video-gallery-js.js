@@ -3,29 +3,30 @@
 ------------------------------------------------------------ */
 const videoData = [
   { title: "Fast Moving", src: "videos/175.mp4" },
-  { title: "40", src: "videos/40.mp4" }
+  { title: "Fast Moving", src: "videos/40.mp4" }
 ];
+
+const tripletsData = [
+  { title: "Visual comparison", src: "videos/40.mp4" },
+  { title: "Visual comparison", src: "videos/41.mp4" }
+];
+
 
 // Slider video pairs (keeping original structure)
 const videoPairs = [
   { 
-    sourceA: "videos/175.mp4", 
-    sourceB: "videos/40.mp4", 
-    titleA: "Ours", 
-    titleB: "40" 
-  },
-  { 
-    sourceA: "videos/175.mp4", 
-    sourceB: "videos/40.mp4", 
-    titleA: "Method 3", 
-    titleB: "Method 4" 
+    sourceA: "videos/40_pano.mp4", 
+    sourceB: "videos/40_dino.mp4", 
+    titleA: "Panoramic Video", 
+    titleB: "DINO based features maps Panorama" 
   }
-  // Add more pairs as needed
 ];
 
 let currentVideoIndex = 0;
+let tripletsVideoIndex = 0;
 let currentPairIndex = 0;
 const totalVideos = videoData.length;
+const totalTriplets = tripletsData.length;
 const totalPairs = videoPairs.length;
 
 /* ------------------------------------------------------------
