@@ -132,4 +132,9 @@ body {
   
 }
 
+.container h2.title.is-3 {
+  font-family: 'Montserrat', sans-serif !important; /* Same as your hero */
+  font-weight: 600;
+}
+
 
