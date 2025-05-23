@@ -41,14 +41,12 @@ const totalPairs = videoPairs.length;
 const currentVideo = document.getElementById("currentVideo");
 const currentVideoSource = document.getElementById("currentVideoSource");
 const videoCounter = document.getElementById("videoCounter");
-const galleryTitle = document.getElementById("galleryTitle");
 const pagination = document.getElementById("pagination");
 
 /* Single video gallery n=3 - FIXED: Different IDs */
 const currentVideoTriplets = document.getElementById("currentVideoTriplets");
 const currentVideoSourceTriplets = document.getElementById("currentVideoSourceTriplets");
 const videoCounterTriplets = document.getElementById("videoCounterTriplets");
-const galleryTitleTriplets = document.getElementById("galleryTitleTriplets");
 const paginationTriplets = document.getElementById("paginationTriplets");
 
 /* Slider gallery */
@@ -84,7 +82,7 @@ function updateDots(container, index) {
    Single video gallery functions
 ------------------------------------------------------------ */
 function updateVideo() {
-  if (!currentVideo || !currentVideoSource || !currentVideoTitle) return;
+  if (!currentVideo || !currentVideoSource) return;
   
   const videoInfo = videoData[currentVideoIndex];
   
@@ -95,9 +93,6 @@ function updateVideo() {
   if (videoCounter) {
     videoCounter.textContent = `${currentVideoIndex + 1}/${totalVideos}`;
   }
-  if (galleryTitle) {
-    galleryTitle.textContent = `${totalVideos} Input Videos:`;
-  }
   
   // Reload video
   currentVideo.load();
@@ -107,7 +102,7 @@ function updateVideo() {
 }
 
 function updateVideoTriplets() {
-  if (!currentVideoTriplets || !currentVideoSourceTriplets || !currentVideoTitleTriplets) return;
+  if (!currentVideoTriplets || !currentVideoSourceTriplets ) return;
   
   const videoInfo = tripletsData[currentVideoIndexTriplets];
   
@@ -117,10 +112,7 @@ function updateVideoTriplets() {
   // Update counter and gallery title
   if (videoCounterTriplets) {
     videoCounterTriplets.textContent = `${currentVideoIndexTriplets + 1}/${totalVideosTriplets}`;
-  }
-  if (galleryTitleTriplets) {
-    galleryTitleTriplets.textContent = `${totalVideosTriplets} Input Videos:`;
-  }
+  
   
   // Reload video
   currentVideoTriplets.load();
